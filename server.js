@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 // Carrega o certificado e a key necessários para a configuração.
 const options = {
   key: fs.readFileSync("server.key"),
-  cert: fs.readFileSync("server.crt")
+  cert: fs.readFileSync("server.cert")
 };
 
 // Cria a instância do server e escuta na porta 3000
