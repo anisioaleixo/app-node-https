@@ -1,6 +1,7 @@
 const fs = require("fs");
 const https = require("https");
 const express = require("express");
+const path = require('path')
 
 // Instância express
 const app = express();
@@ -10,8 +11,8 @@ app.get("/", (req, res) => {
 
 // Carrega o certificado e a key necessários para a configuração.
 const options = {
-  key: fs.readFileSync("server.key"),
-  cert: fs.readFileSync("server.cert")
+  key: fs.readFileSync(path.resolve(__dirname,"certificado","server.key")),
+  cert: fs.readFileSync(path.resolve(__dirname,"certificado","server.cert"))
 };
 
 // Cria a instância do server e escuta na porta 3000
